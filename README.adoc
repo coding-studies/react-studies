@@ -11,8 +11,8 @@
 
 Original source code repository:
 
-* link:https://github.com/PacktPublishing/Micro-State-Management-with-React-Hooks
-* link:https://www.packtpub.com/product/micro-state-management-with-react-hooks/9781801812375
+* https://github.com/PacktPublishing/Micro-State-Management-with-React-Hooks
+* https://www.packtpub.com/product/micro-state-management-with-react-hooks/9781801812375
 
 == Interesting Posts
 
