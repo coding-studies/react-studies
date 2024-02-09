@@ -1,6 +1,6 @@
 = Micro State Management with React Hooks
 
-Original source code repositry:
+Original source code repository:
 
 * link:https://github.com/PacktPublishing/Micro-State-Management-with-React-Hooks
 * link:https://www.packtpub.com/product/micro-state-management-with-react-hooks/9781801812375

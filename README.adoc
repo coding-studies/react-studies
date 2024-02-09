@@ -1,0 +1,20 @@
+= React Studies
+:toc: left
+:icons: font
+:sectlevel: 6
+:sectlinks:
+:experimental:
+
+== Books
+
+=== Micro State Management with React Hooks
+
+Original source code repository:
+
+* link:https://github.com/PacktPublishing/Micro-State-Management-with-React-Hooks
+* link:https://www.packtpub.com/product/micro-state-management-with-react-hooks/9781801812375
+
+== Interesting Posts
+
+* link:https://www.developerway.com/posts/react-re-renders-guide[React re-renders guide: everything, all at once (Nadia Makarevich)^]
+
