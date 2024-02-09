@@ -1,0 +1,55 @@
+= Basic State Hooks
+
+== Bail out
+
+Bail out is the term to describe a situation where a new state is the same as the previous state and therefore react is smart enough to _not_ re-render the component.
+
+It happens when setting the same primitive value or the same reference object.
+
+== useState
+
+We can update the state with a value:
+
+[source,javascript]
+----
+const [count, setCount] = useState(0);
+
+setCount(1);
+setCount(count + 1);
+----
+
+Or
+
+[source,javascript]
+----
+const [state, setState] = useState({ count: 0 });
+
+setState({ count: 2 });
+----
+
+But this wouldn't work, as the reference is still the same.
+It won't rerender.
+
+[source,javascript]
+----
+state.count += 1;
+setState(state);
+----
+
+Update state with a function:
+
+[source,javascript]
+----
+const [count, setCount] = useState(0);
+
+setCount(c => c + 1);
+----
+
+Or
+
+[source,javascript]
+----
+const [count, setCount] = useState({ count: 1 });
+
+setCount(prev => { ...prev, count: prev.count + 1 });
+----
