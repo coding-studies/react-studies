@@ -1,6 +1,28 @@
-= Micro State Management with React Hooks
+= Micro State Management with React Hooks (book study notes)
+:toc: left
+:icons: font
+:sectlevels: 6
+:sectlinks:
 
-Original source code repository:
+== Intro
 
-* https://github.com/PacktPublishing/Micro-State-Management-with-React-Hooks
+My notes and experiments based on my studies of the book.
+
 * https://www.packtpub.com/product/micro-state-management-with-react-hooks/9781801812375
+* https://github.com/PacktPublishing/Micro-State-Management-with-React-Hooks
+
+Project created with:
+
+[source,shell-session]
+----
+$ npx create-react-app statemgntbook --template=typescript
+----
+
+== Local development
+
+[source,shell-session]
+----
+$ nvm use
+$ npm install
+$ npm run start
+----

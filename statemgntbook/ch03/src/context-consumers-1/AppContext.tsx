@@ -1,7 +1,3 @@
-//
-// Not from the book, but some stuff I want to try, debug and understand.
-//
-
 import React, {
   createContext,
   useContext,
@@ -44,36 +40,10 @@ function switchTheme(state: AppProviderProps): AppProviderProps {
   };
 }
 
-function Counter1() {
-  const { theme, count, setState } = useAppContext();
-  log("=== state", theme, count, setState);
-
-  return (
-    <section>
-      <div>
-        <p>Count1: {count}</p>
-        <button onClick={() => setState(incrementCount)}>+1</button>
-      </div>
-      <div>
-        <p>Theme: {theme}</p>
-        <button onClick={() => setState(switchTheme)}>
-          Switch to {theme === "light" ? "dark" : "light"} theme
-        </button>
-      </div>
-    </section>
-  );
-}
-
-function Wrapper() {
-  const [state, setState] = useState(initialAppState);
-
-  log("<Wrapper /> state", state);
-
-  return (
-    <AppContext.Provider value={{ ...state, setState }}>
-      <Counter1 />
-    </AppContext.Provider>
-  );
-}
-
-export { Wrapper };
+export {
+  AppContext,
+  initialAppState,
+  useAppContext,
+  incrementCount,
+  switchTheme,
+};
