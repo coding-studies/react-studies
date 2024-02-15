@@ -1,13 +1,10 @@
-import {
-  useAppContext,
-  switchTheme,
-} from "./AppContext";
+import { useAppContext, switchTheme } from "./AppContext";
 
 const log = console.log.bind(console);
 
 function ThemeSwitcher() {
   const { theme, count, setState } = useAppContext();
-  log("=== <ThemeSwitcher />", theme, count, setState);
+  log("=== <ThemeSwitcher />", theme, count, setState, "hey");
 
   return (
     <section className="theme-switcher">
