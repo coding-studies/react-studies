@@ -49,7 +49,6 @@ function Counter2(): JSX.Element {
   return (
     <section>
       <p>Count2: {count2}</p>
-      <p>hello</p>
       <p>Renders: {renders.current}</p>
       <button onClick={() => setCount2((c) => c + 1)}>+1</button>
     </section>
