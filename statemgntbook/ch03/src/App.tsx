@@ -7,7 +7,8 @@ import "./App.css";
 // import { MyApp } from "./05a_pitfall_context_object";
 // import { MyApp } from "./06a_small_state_pieces";
 // import { MyApp } from "./07a_one_state_usereducer";
-import { MyApp } from "./08a_custom_hooks_and_providers";
+// import { MyApp } from "./08a_custom_hooks_and_providers";
+import { MyApp } from "./09a_factory_pattern";
 
 function App(): JSX.Element {
   return (
