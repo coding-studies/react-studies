@@ -24,8 +24,11 @@ type Action = { type: "INC1" } | { type: "INC2" };
 // One context for each count, but a single dispatch provider.
 //
 const Count1Context = createContext<number>(0);
+Count1Context.displayName = "Count1Context";
 const Count2Context = createContext<number>(0);
+Count2Context.displayName = "Count2Context";
 const DispatchContext = createContext<Dispatch<Action>>(() => {});
+DispatchContext.displayName = "DispatchContext";
 
 function Count1(): JSX.Element {
   const count1 = useContext(Count1Context);
@@ -74,7 +77,7 @@ function Parent(): JSX.Element {
   );
 }
 
-function Provider({ children }: { children: ReactNode }): JSX.Element {
+function MyAppProvider({ children }: { children: ReactNode }): JSX.Element {
   const [state, dispatch] = useReducer(
     (prevState: { count1: number; count2: number }, action: Action) => {
       if (action.type === "INC1")
@@ -105,9 +108,9 @@ function Provider({ children }: { children: ReactNode }): JSX.Element {
 
 function MyApp (): JSX.Element {
   return (
-    <Provider>
+    <MyAppProvider>
       <Parent />
-    </Provider>
+    </MyAppProvider>
   );
 }
 
