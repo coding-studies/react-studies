@@ -9,13 +9,18 @@ import {
 
 function createStateContext<Value, State>(
   useValue: (init?: Value) => State,
+  displayName?: string
 ) {
   const StateContext = createContext<State | null>(null);
+  StateContext.displayName = displayName ?? "StateContext";
 
   function StateProvider({
     initialValue,
     children,
-  }: { initialValue?: Value, children: ReactNode }) {
+  }: {
+    initialValue?: Value;
+    children: ReactNode;
+  }) {
     return (
       <StateContext.Provider value={useValue(initialValue)}>
         {children}
@@ -39,8 +44,14 @@ function useNumberState(init: number | undefined) {
   return useState(init || 0);
 }
 
-const [Count1Provider, useCount1] = createStateContext(useNumberState);
-const [Count2Provider, useCount2] = createStateContext(useNumberState);
+const [Count1Provider, useCount1] = createStateContext(
+  useNumberState,
+  "CountContext1"
+);
+const [Count2Provider, useCount2] = createStateContext(
+  useNumberState,
+  "CountContext2"
+);
 
 function Count1(): JSX.Element {
   const [count1, setCount1] = useCount1();
@@ -54,7 +65,7 @@ function Count1(): JSX.Element {
     <section>
       <p>Count1: {count1}</p>
       <p>Renders: {renders.current}</p>
-      <button onClick={() => setCount1(c => c + 1)}>+1</button>
+      <button onClick={() => setCount1((c) => c + 1)}>+1</button>
     </section>
   );
 }
@@ -71,7 +82,7 @@ function Count2(): JSX.Element {
     <section>
       <p>Count2: {count2}</p>
       <p>Renders: {renders.current}</p>
-      <button onClick={() => setCount2(c => c + 1)}>+1</button>
+      <button onClick={() => setCount2((c) => c + 1)}>+1</button>
     </section>
   );
 }
